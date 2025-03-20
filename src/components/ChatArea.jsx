@@ -87,7 +87,7 @@ const ChatArea = ({ selectedGroup, socket }) => {
     const token = currentUser?.token;
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/messages/${selectedGroup?._id}`,
+        `https://vv-chat-app-backend.onrender.com/api/messages/${selectedGroup?._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -106,7 +106,7 @@ const ChatArea = ({ selectedGroup, socket }) => {
     try {
       const token = currentUser.token;
       const { data } = await axios.post(
-        "http://localhost:8080/api/messages",
+        "https://vv-chat-app-backend.onrender.com/api/messages",
         {
           content: newMessage,
           groupId: selectedGroup?._id,

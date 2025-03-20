@@ -24,7 +24,7 @@ const Login = () => {
     setIsLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/users/login",
+        "https://vv-chat-app-backend.onrender.com/api/users/login",
         {
           email,
           password,

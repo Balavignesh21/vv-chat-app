@@ -44,7 +44,7 @@ const Sidebar = ({ setSelectedGroup }) => {
   const checkAdminStatus = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/users/${userInfo?._id}`,
+        `https://vv-chat-app-backend.onrender.com/api/users/${userInfo?._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -60,11 +60,14 @@ const Sidebar = ({ setSelectedGroup }) => {
   // Fetch all groups
   const fetchGroups = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/groups", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const { data } = await axios.get(
+        "https://vv-chat-app-backend.onrender.com/api/groups",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setGroups(data);
 
       // Get user groups
@@ -85,7 +88,7 @@ const Sidebar = ({ setSelectedGroup }) => {
   const handleCreateGroup = async () => {
     try {
       await axios.post(
-        "http://localhost:8080/api/groups",
+        "https://vv-chat-app-backend.onrender.com/api/groups",
         {
           name: newGroupName,
           description: newGroupDescription,
@@ -121,7 +124,7 @@ const Sidebar = ({ setSelectedGroup }) => {
   const handleJoinGroup = async (groupId) => {
     try {
       await axios.post(
-        `http://localhost:8080/api/groups/join/${groupId}`,
+        `https://vv-chat-app-backend.onrender.com/api/groups/join/${groupId}`,
         {},
         {
           headers: {
@@ -153,7 +156,7 @@ const Sidebar = ({ setSelectedGroup }) => {
   const handleLeaveGroup = async (groupId) => {
     try {
       await axios.post(
-        `http://localhost:8080/api/groups/leave/${groupId}`,
+        `https://vv-chat-app-backend.onrender.com/api/groups/leave/${groupId}`,
         {},
         {
           headers: {

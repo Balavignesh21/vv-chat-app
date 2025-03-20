@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import ChatArea from "../components/ChatArea";
 import io from "socket.io-client";
-const ENDPOINT = "http://localhost:8080";
+const ENDPOINT = "https://vv-chat-app-backend.onrender.com";
 
 function Chat() {
   const [selectedGroup, setSelectedGroup] = useState(null);

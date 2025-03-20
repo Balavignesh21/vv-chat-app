@@ -24,7 +24,7 @@ const Register = () => {
     setIsLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/users/register",
+        "https://vv-chat-app-backend.onrender.com/api/users/register",
         {
           username,
           email,
