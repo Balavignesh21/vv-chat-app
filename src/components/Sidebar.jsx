@@ -197,6 +197,7 @@ const Sidebar = ({ setSelectedGroup }) => {
       width="300px"
       display="flex"
       flexDirection="column"
+      position="relative"
     >
       <Flex
         p={4}
@@ -301,7 +302,7 @@ const Sidebar = ({ setSelectedGroup }) => {
         </VStack>
       </Box>
       <Box
-        p={4}
+        p={3}
         borderTop="1px solid"
         borderColor="gray.200"
         bg="gray.50"
@@ -312,10 +313,12 @@ const Sidebar = ({ setSelectedGroup }) => {
         width="100%"
       >
         <Button
+          p={6}
           variant="ghost"
           colorScheme="red"
           leftIcon={<Icon as={FiLogOut} />}
           onClick={handleLogout}
+          width="100%"
           _hover={{
             bg: "red.50",
             transform: "translateY(-2px)",
